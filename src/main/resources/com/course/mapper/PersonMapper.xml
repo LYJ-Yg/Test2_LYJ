@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.course.mapper.PersonMapper">
+    <!-- SQL语句中以"#{}"的形式引用参数 -->
+    <select id="findPersonById" parameterType="int" resultMap="IdCardWithPersonResult">
+        select  * from t_person where id=#{id}
+    </select>
+    <resultMap type="Person" id="IdCardWithPersonResult">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="age" property="age" />
+        <result column="sex" property="sex" />
+        <!-- association处理has-a关系 -->
+        <!--注意：这种方式javaType必须指定，表示supervisor的类型是Teacher，否则会报错 -->
+        <association property="card" javaType="IdCard" column="card_id"
+                     select="com.course.mapper.IdCardMapper.findById">
+        </association>
+    </resultMap>
+
+
+    <select id="findByLuoYinJin" parameterType="int"
+            resultType="com.course.pojo.Person" resultMap="IdCardWithPersonResult">
+        SELECT
+            *  , p.id pid,
+                c.id cid
+        from t_person p,t_idcard c
+        where p.card_id=c.id
+          and c.id=#{id}
+    </select>
+    <resultMap id="IdCardWithPersonResult2" type="Person">
+        <id property="id" column="pid" ></id>
+        <result property="name" column="name"></result>
+        <result property="age" column="age"></result>
+        <result property="sex" column="sex"></result>
+        <association property="card" javaType="IdCard" column="card_id">
+            <id property="id" column="id"></id>
+            <result property="code" column="code"></result>
+        </association>
+    </resultMap>
+</mapper>

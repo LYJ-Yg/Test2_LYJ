@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.course.mapper.UserMapper">
+    <select id="findUserWithOrdersById" parameterType="integer"
+            resultMap="UserWithOrdesResult">
+    select * ,
+           t_user.id uid,
+           t_orders.id oid
+    from
+        t_user ,
+        t_orders
+    where t_user.id =t_orders.user_id
+      and t_user.id=#{id}
+</select>
+<resultMap id="UserWithOrdesResult" type="user">
+    <id property="id" column="uid"></id>
+    <result property="username" column="userame"></result>
+    <result property="address" column="address"></result>
+    <collection property="ordersList"
+                javaType="list"
+                ofType="orders">
+        <id property="id" column="oid" ></id>
+        <result property="number" column="number"></result>
+
+
+
+    </collection>
+
+
+
+
+
+</resultMap>
+
+</mapper>

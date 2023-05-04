@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.course.mapper.CustomerMapper">
+
+    <select id="findCustomerByUsernameAndJobs" parameterType="com.course.pojo.Customer"
+             resultType="com.course.pojo.Customer">
+        select * from  t_customer
+        <where>
+
+            <if test="username!=null and username!=''">
+                username like concat('%',#{usernae},'%')
+            </if>
+        <if test="jobs!=null and jobs!=' '">
+                and jobs=#{jobs}
+        </if>
+        </where>
+    </select>
+
+
+    <select id="findCustomerByUsernameOrJobs" parameterType="com.course.pojo.Customer"
+            resultType="com.course.pojo.Customer">
+        select * from  t_customer
+        <where>
+
+        <choose>
+
+        <when test="username!=null and username!=' '">
+            username like concat('%',#{usernae},'%')
+        </when>
+        <when test="jobs!=null and jobs!=' '">
+            and jobs=#{jobs}
+        </when>
+            <otherwise>
+                and phone is not null
+            </otherwise>
+        </choose>
+        </where>
+    </select>
+        <update id="updateCustomerBySet"
+                parameterType="com.course.pojo.Customer">
+            update t_customer
+            <!--set username=#{username},jobs=#{jobs},phone=#{phone}-->
+            <set>
+            <if test="username!=null and username!=''">
+                username=#{username},
+            </if>
+            <if test="jobs!=null and jobs!=''">
+                jobs=#{jobs},
+            </if>
+            <if test="phone!=null and phone=''">
+                phone=#{phone},
+            </if>
+            </set>
+            where id=#{id}
+    </update>
+    <update id="updateByLuoYinJin" parameterType="com.course.pojo.Customer">
+        update t_customer
+        <trim prefix="set" suffixOverrides="," suffix="where id=#{id}">
+            <if test="username !=null">username= #{username},</if>
+            <if test="phone !=null">phone = #{phone},</if>
+        </trim>
+
+    </update>
+    <!-- 类型是Array-->
+    <select id="findByArray" parameterType="java.util.Arrays"
+            resultType="com.course.pojo.Customer">
+        select * from t_customer where id in
+        <foreach collection="array" item="id"
+                 open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+
+    </select>
+    <select id="findByList" parameterType="java.util.List"
+            resultType="com.course.pojo.Customer">
+        select * from t_customer where id in
+        <foreach collection="list" index="index" item="id"
+                 open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+
+    </select>
+    <select id="findByMap" parameterType="java.util.Map"
+            resultType="com.course.pojo.Customer">
+        select * from t_customer where jobs=#{jobs} and id in
+        <foreach collection="id" index="index" item="roleMap"
+                 open="(" close=")" separator=",">
+            #{roleMap}
+        </foreach>
+
+    </select>
+    <select id="selectByLuoYinJin" parameterType="java.util.Map"
+            resultType="com.course.pojo.Customer">
+        select * from t_customer where jobs=#{jobs} and id in
+        <foreach collection="id" index="index" item="roleMap"
+                 open="(" close=")" separator=",">
+            #{roleMap}
+        </foreach>
+
+    </select>
+
+
+
+
+</mapper>

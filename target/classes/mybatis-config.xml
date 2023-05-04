@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="db.properties" />
+    <settings>
+        <!--        开启映射  默认是false-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!--        开启缓存-->
+        <setting name="useGeneratedKeys" value="true"/>
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <setting name="aggressiveLazyLoading" value="true"/>
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+    <!--    设置别名 不区分大小写-->
+
+    <typeAliases>
+        <typeAlias type="com.course.pojo.Customer" alias="Customer"></typeAlias>
+        <typeAlias type="com.course.pojo.Person" alias="person"></typeAlias>
+        <typeAlias type="com.course.pojo.IdCard" alias="IdCard"></typeAlias>
+        <typeAlias type="com.course.pojo.User" alias="user"></typeAlias>
+        <typeAlias type="com.course.pojo.Orders" alias="orders"></typeAlias>
+<!--        <typeAlias type="com.example.chapt01.Student" alias="Student"></typeAlias>-->
+
+    </typeAliases>
+
+    <!--        包扫描-->
+    <!--    <package name="com.example.chapt01.User"/>-->
+
+
+    <environments default="mysql">
+        <environment id="mysql">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${mysql.driver}"/>
+                <property name="url" value="${mysql.url}"/>
+                <property name="username" value="${mysql.username}"/>
+                <property name="password" value="${mysql.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <!--        <mapper resource="Mapper/UserMapper.xml"/>-->
+        <!--        <mapper>url="file:///..."</mapper>-->
+        <!--        第三种：mybatis需要知道mapper映射文件的路径+映射文件名-->
+        <!--        映射文件名必须和接口同名-->
+        <mapper resource="com/course/mapper/CustomerMapper.xml"></mapper>
+        <mapper resource="com/course/mapper/PersonMapper.xml"></mapper>
+        <mapper resource="com/course/mapper/IdCardMapper.xml"></mapper>
+        <mapper resource="com/course/mapper/UserMapper.xml"></mapper>
+    </mappers>
+
+
+</configuration>
