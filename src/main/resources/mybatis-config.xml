@@ -49,6 +49,7 @@
         <mapper resource="com/course/mapper/PersonMapper.xml"></mapper>
         <mapper resource="com/course/mapper/IdCardMapper.xml"></mapper>
         <mapper resource="com/course/mapper/UserMapper.xml"></mapper>
+        <mapper resource="com/course/mapper/OrdersMapper.xml"></mapper>
     </mappers>
 
 
