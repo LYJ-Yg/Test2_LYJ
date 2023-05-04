@@ -1,6 +1,7 @@
 package com.course.test;
 
 import com.course.pojo.Customer;
+import com.course.pojo.Orders;
 import com.course.pojo.Person;
 import com.course.pojo.User;
 import com.course.utils.MyBatisUtils;
@@ -41,6 +42,15 @@ public class MyBatisTest2 {
         User user =new User();
         user =sqlSession.selectOne("com.course.mapper.UserMapper.findUserWithOrdersById",1);
         System.out.println(user);
+        sqlSession.close();
+    }
+    @Test
+    public void findOrderWithProductByIdTest()
+    {
+        SqlSession sqlSession=MyBatisUtils.getSession();
+        Orders orders= new Orders();
+        orders=sqlSession.selectOne("com.course.mapper.Orders"+"findOrdersById",1);
+        System.out.println(orders);
         sqlSession.close();
     }
 
