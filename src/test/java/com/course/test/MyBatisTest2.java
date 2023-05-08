@@ -49,7 +49,7 @@ public class MyBatisTest2 {
     {
         SqlSession sqlSession=MyBatisUtils.getSession();
         Orders orders= new Orders();
-        orders=sqlSession.selectOne("com.course.mapper.OrderMapper.findOrdersById",1);
+        orders=sqlSession.selectOne("com.course.mapper.OrderMapper.findUserWithOrdersById",1);
         System.out.println(orders);
         sqlSession.close();
     }
