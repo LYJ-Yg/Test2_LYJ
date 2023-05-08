@@ -403,3 +403,23 @@
 2023-05-04 20:06:02,229[main] [org.apache.ibatis.datasource.pooled.PooledDataSource]-[DEBUG] PooledDataSource forcefully closed/removed all connections.
 2023-05-04 20:06:02,230[main] [org.apache.ibatis.datasource.pooled.PooledDataSource]-[DEBUG] PooledDataSource forcefully closed/removed all connections.
 2023-05-04 20:06:02,230[main] [org.apache.ibatis.datasource.pooled.PooledDataSource]-[DEBUG] PooledDataSource forcefully closed/removed all connections.
+2023-05-04 20:07:22,525[main] [org.apache.ibatis.logging.LogFactory]-[DEBUG] Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2023-05-04 20:07:22,530[main] [org.apache.ibatis.datasource.pooled.PooledDataSource]-[DEBUG] PooledDataSource forcefully closed/removed all connections.
+2023-05-04 20:07:22,530[main] [org.apache.ibatis.datasource.pooled.PooledDataSource]-[DEBUG] PooledDataSource forcefully closed/removed all connections.
+2023-05-04 20:07:22,530[main] [org.apache.ibatis.datasource.pooled.PooledDataSource]-[DEBUG] PooledDataSource forcefully closed/removed all connections.
+2023-05-04 20:07:22,530[main] [org.apache.ibatis.datasource.pooled.PooledDataSource]-[DEBUG] PooledDataSource forcefully closed/removed all connections.
+2023-05-04 20:08:23,087[main] [org.apache.ibatis.logging.LogFactory]-[DEBUG] Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2023-05-04 20:08:23,092[main] [org.apache.ibatis.datasource.pooled.PooledDataSource]-[DEBUG] PooledDataSource forcefully closed/removed all connections.
+2023-05-04 20:08:23,092[main] [org.apache.ibatis.datasource.pooled.PooledDataSource]-[DEBUG] PooledDataSource forcefully closed/removed all connections.
+2023-05-04 20:08:23,092[main] [org.apache.ibatis.datasource.pooled.PooledDataSource]-[DEBUG] PooledDataSource forcefully closed/removed all connections.
+2023-05-04 20:08:23,092[main] [org.apache.ibatis.datasource.pooled.PooledDataSource]-[DEBUG] PooledDataSource forcefully closed/removed all connections.
+2023-05-04 20:08:52,678[main] [org.apache.ibatis.logging.LogFactory]-[DEBUG] Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2023-05-04 20:08:52,683[main] [org.apache.ibatis.datasource.pooled.PooledDataSource]-[DEBUG] PooledDataSource forcefully closed/removed all connections.
+2023-05-04 20:08:52,683[main] [org.apache.ibatis.datasource.pooled.PooledDataSource]-[DEBUG] PooledDataSource forcefully closed/removed all connections.
+2023-05-04 20:08:52,683[main] [org.apache.ibatis.datasource.pooled.PooledDataSource]-[DEBUG] PooledDataSource forcefully closed/removed all connections.
+2023-05-04 20:08:52,683[main] [org.apache.ibatis.datasource.pooled.PooledDataSource]-[DEBUG] PooledDataSource forcefully closed/removed all connections.
+2023-05-04 20:10:33,057[main] [org.apache.ibatis.logging.LogFactory]-[DEBUG] Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2023-05-04 20:10:33,062[main] [org.apache.ibatis.datasource.pooled.PooledDataSource]-[DEBUG] PooledDataSource forcefully closed/removed all connections.
+2023-05-04 20:10:33,062[main] [org.apache.ibatis.datasource.pooled.PooledDataSource]-[DEBUG] PooledDataSource forcefully closed/removed all connections.
+2023-05-04 20:10:33,062[main] [org.apache.ibatis.datasource.pooled.PooledDataSource]-[DEBUG] PooledDataSource forcefully closed/removed all connections.
+2023-05-04 20:10:33,062[main] [org.apache.ibatis.datasource.pooled.PooledDataSource]-[DEBUG] PooledDataSource forcefully closed/removed all connections.

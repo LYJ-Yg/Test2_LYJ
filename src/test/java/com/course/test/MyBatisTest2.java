@@ -45,7 +45,7 @@ public class MyBatisTest2 {
         sqlSession.close();
     }
     @Test
-    public void findOrderWithProductByIdTest()
+    public void findOrdersById()
     {
         SqlSession sqlSession=MyBatisUtils.getSession();
         Orders orders= new Orders();
